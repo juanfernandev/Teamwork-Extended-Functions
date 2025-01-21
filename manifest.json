@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Teamwork Extended Functions",
+    "version": "1.0.0",
+    "description": "Extiende las funciones de Teamwork añadiendo el nombre del proyecto a tareas automáticamente.",
+    "author": "Juan Fernandev",
+    "permissions": ["scripting", "activeTab"],
+    "host_permissions": ["*://*.teamwork.com/*"],
+    "background": {
+        "scripts": ["background.js"],
+        "type": "module"
+    },
+    "content_scripts": [{
+        "matches": ["*://*.teamwork.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+    }],
+    "icons": {
+        "128": "icon.png"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{d3b07384-d9a7-45b7-b8d6-1a2e3a2810f6}"
+        }
+    }
+}
